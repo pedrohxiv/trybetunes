@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import {
+  addSong,
+  getFavoriteSongs,
+  removeSong,
+} from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
 
 export default class MusicCard extends Component {
@@ -22,8 +26,8 @@ export default class MusicCard extends Component {
     }
   }
 
-  favoriteSong = ({ target: { checked } }) => {
-    const { album } = this.props;
+  favoriteSong = ({ target: { checked, id } }) => {
+    const { album, removeFavorite } = this.props;
     this.setState({ loading: true }, async () => {
       if (checked === false) await removeSong(album);
       await addSong(album);
@@ -32,6 +36,7 @@ export default class MusicCard extends Component {
         favorite: checked,
       });
     });
+    removeFavorite(id);
   };
 
   render() {
@@ -50,12 +55,12 @@ export default class MusicCard extends Component {
               <code>audio</code>
               .
             </audio>
-            <label htmlFor="favorite">
+            <label htmlFor={ trackId }>
               <input
                 data-testid={ `checkbox-music-${trackId}` }
                 type="checkbox"
                 name="favorite"
-                id="favorite"
+                id={ trackId }
                 onChange={ this.favoriteSong }
                 checked={ favorite }
               />
@@ -73,4 +78,5 @@ MusicCard.propTypes = {
   previewUrl: PropTypes.string.isRequired,
   trackId: PropTypes.string.isRequired,
   album: PropTypes.arrayOf(PropTypes.string).isRequired,
+  removeFavorite: PropTypes.func.isRequired,
 };
