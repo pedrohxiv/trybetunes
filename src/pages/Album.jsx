@@ -33,7 +33,12 @@ export default class Album extends Component {
         <img src={ albumImage } alt={ nameAlbum } />
         {albums.slice(1).map((album) => (
           <div key={ album.collectionId }>
-            <MusicCard trackName={ album.trackName } previewUrl={ album.previewUrl } />
+            <MusicCard
+              trackName={ album.trackName }
+              previewUrl={ album.previewUrl }
+              trackId={ album.trackId }
+              album={ album }
+            />
           </div>
         ))}
       </div>
