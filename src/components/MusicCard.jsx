@@ -26,8 +26,8 @@ export default class MusicCard extends Component {
     }
   }
 
-  favoriteSong = ({ target: { checked, id } }) => {
-    const { album, removeFavorite } = this.props;
+  favoriteSong = ({ target: { checked /* , id */ } }) => {
+    const { album /* , removeFavorite */ } = this.props;
     this.setState({ loading: true }, async () => {
       if (checked === false) await removeSong(album);
       await addSong(album);
@@ -36,7 +36,7 @@ export default class MusicCard extends Component {
         favorite: checked,
       });
     });
-    removeFavorite(id);
+    // removeFavorite(id);
   };
 
   render() {
@@ -78,5 +78,5 @@ MusicCard.propTypes = {
   previewUrl: PropTypes.string.isRequired,
   trackId: PropTypes.string.isRequired,
   album: PropTypes.arrayOf(PropTypes.string).isRequired,
-  removeFavorite: PropTypes.func.isRequired,
+  // removeFavorite: PropTypes.func.isRequired,
 };
