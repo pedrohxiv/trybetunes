@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
-import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 export default class Favorites extends Component {
@@ -11,18 +11,11 @@ export default class Favorites extends Component {
   };
 
   componentDidMount() {
-    this.setState({ loading: true }, async () => {
-      this.setState({
-        loading: false,
-        albums: await getFavoriteSongs(),
-      });
-    });
+    this.removeFavorite();
   }
 
-  removeFavorite = async (id) => {
-    const { albums } = this.state;
+  removeFavorite = async () => {
     this.setState({ loading: true }, async () => {
-      await removeSong(albums.find((album) => album.trackId === +id));
       this.setState({
         loading: false,
         albums: await getFavoriteSongs(),
