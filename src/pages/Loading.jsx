@@ -4,7 +4,7 @@ export default class Loading extends Component {
   render() {
     return (
       <div>
-        <p>Carregando...</p>
+        <p className="text-blue-700 text-2xl">Carregando...</p>
       </div>
     );
   }
