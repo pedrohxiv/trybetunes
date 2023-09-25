@@ -2,7 +2,7 @@
 
 Neste projeto, trabalhei no desenvolvimento do TrybeTunes, uma aplicação voltada para música, que permite aos usuários realizar diversas ações. Suas principais funcionalidades incluem a capacidade de fazer login, pesquisar por bandas ou artistas, listar álbuns disponíveis, visualizar músicas de um álbum selecionado, reproduzir prévias de músicas, favoritar e desfavoritar músicas, gerenciar uma lista de músicas favoritas, acessar e editar o perfil do usuário logado. Ao longo desse projeto, aprimorei minhas habilidades em fazer requisições e consumir dados de uma API, utilizar os ciclos de vida dos componentes React, trabalhar com a função setState para garantir que o código seja executado no momento certo após a atualização do estado, configurar o componente BrowserRouter para gerenciar as rotas da aplicação, criar rotas correspondentes a diferentes componentes com o React Router, utilizar o componente Switch para direcionar corretamente as rotas e criar links de navegação na aplicação com o componente Link.
 
-Em resumo, este projeto é uma oportunidade para você aplicar suas habilidades em desenvolvimento web com foco em React, consumir e manipular dados de uma API, criar uma experiência de usuário interativa e funcional, e aprimorar suas capacidades de gerenciamento de rotas em uma aplicação web.
+Em resumo, este projeto é uma oportunidade para aplicar minhas habilidades em desenvolvimento web com foco em React, consumir e manipular dados de uma API, criar uma experiência de usuário interativa e funcional, e aprimorar minhas capacidades de gerenciamento de rotas em uma aplicação web.
 
 ## O que foi desenvolvido
 
